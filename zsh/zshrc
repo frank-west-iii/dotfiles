@@ -1,0 +1,20 @@
+# Path to your oh-my-zsh installation.
+export ZSH=/Users/frank/.oh-my-zsh
+
+ZSH_THEME="robbyrussell"
+
+plugins=(gitfast brew gem)
+
+alias be='bundle exec'
+alias ls='ls -FG'
+alias l='ls -l'
+alias la='ls -la'
+
+alias sz='source ~/.zshrc'
+
+export PATH="$HOME/.rbenv/bin:/Users/frank/.rbenv/shims:/Users/frank/.bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+
+source $ZSH/oh-my-zsh.sh
+
+# export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"

@@ -1,0 +1,29 @@
+[alias]
+  aa = add --all
+  b = branch
+  co = checkout
+  cleanup = !git remote prune origin && git gc && git clean -df && git stash clear
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+  rhm = git checkout master && git fetch && git reset --hard origin/master
+  st = status
+
+[color]
+  diff = auto
+  status = auto
+  branch = auto
+
+[color "diff"]
+  meta = yellow 
+
+[core]
+  excludesfile = ~/.gitignore
+  editor = vim --noplugin
+[apply]
+  whitespace = nowarn
+
+[commit]
+  template = ~/.gitmessage
+
+[user]
+  name = Frank West
+  email = frank.west.iii@gmail.com
