@@ -1,7 +1,0 @@
-" Titlecase - Titlecasing operator
-
-Bundle 'christoomey/vim-titlecase'
-
-let g:titlecase_map_keys = 1
-
-" vim:ft=vim
