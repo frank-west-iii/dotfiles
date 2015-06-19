@@ -1,0 +1,7 @@
+" Vim Rspec - Run specs from vim
+
+Bundle 'thoughtbot/vim-rspec'
+
+let g:rspec_command = "VtrSendCommandToRunner! rspec {spec}"
+
+" vim:ft=vim
