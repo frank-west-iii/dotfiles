@@ -27,3 +27,5 @@
 [user]
   name = Frank West
   email = frank.west.iii@gmail.com
+[push]
+	default = simple
