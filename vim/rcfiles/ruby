@@ -1,0 +1,20 @@
+" Ruby configurations
+"------------------------
+
+"Set filetype to ruby on read and new files matching the pattern
+"Vagrantfile, Gemfile, or Guardfile
+au BufRead,BufNewFile Vagrantfile set filetype=ruby
+au BufRead,BufNewFile Gemfile set filetype=ruby
+au BufRead,BufNewFile Guardfile set filetype=ruby
+
+"Setup spacing for ruby filetypes
+au FileType ruby setl sw=2 sts=2 ts=2 tw=80 " Two spaces per tab
+
+"Setup spacing for erb filetypes
+au FileType ebury setl setl sw=2 sts=2 ts=2 " Two spaces per tab
+
+"Quick enter a pry
+nmap <leader>bp orequire 'pry'; binding.pry<esc>^
+
+
+" vim:ft=vim

@@ -16,5 +16,10 @@ export PATH="$HOME/.rbenv/bin:/Users/frank/.rbenv/shims:/Users/frank/.bin:/usr/l
 
 source $ZSH/oh-my-zsh.sh
 
+function trash() { mv $1 ~/.Trash }
+
+function mvf() { mv $1 ~/.vim/rcfiles }
+function mvp() { mv $1 ~/.vim/rcplugins }
+
 # export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
