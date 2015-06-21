@@ -18,8 +18,15 @@ source $ZSH/oh-my-zsh.sh
 
 function trash() { mv $1 ~/.Trash }
 
-function mvf() { mv $1 ~/.vim/rcfiles }
-function mvp() { mv $1 ~/.vim/rcplugins }
+
+if [ -d ~/.zsh ]; then
+  for i in ~/.zsh/*.sh; do
+    if [ -r $i ]; then
+      . $i
+    fi
+  done
+  unset i
+fi
 
 # export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
