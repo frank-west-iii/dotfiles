@@ -1,0 +1,5 @@
+" Vim Tmux Navigator
+
+Bundle "christoomey/vim-tmux-navigator"
+
+" vim:ft=vim
