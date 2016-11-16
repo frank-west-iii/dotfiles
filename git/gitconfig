@@ -5,8 +5,9 @@
   cleanup = !git remote prune origin && git gc && git clean -df && git stash clear
   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
   rhm = !git checkout master && git fetch && git reset --hard origin/master
+  rho = !git fetch && git reset --hard origin/$(git rev-parse --abbrev-ref HEAD)
   st = status
-  step = !git aa && git commit -m 'Refactor step'
+  cp = cherry-pick
 
 [color]
   diff = auto
