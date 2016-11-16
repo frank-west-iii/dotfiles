@@ -1,0 +1,5 @@
+" Elixir - Elixir language 
+
+Bundle "elixir-lang/vim-elixir"
+
+" vim:ft=vim

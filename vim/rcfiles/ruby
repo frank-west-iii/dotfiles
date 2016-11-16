@@ -16,5 +16,12 @@ au FileType ebury setl setl sw=2 sts=2 ts=2 " Two spaces per tab
 "Quick enter a pry
 nmap <leader>bp orequire 'pry'; binding.pry<esc>^
 
+let g:rspec_command = "Dispatch bundle exec rspec {spec}"
+
+" RSpec.vim mappings
+map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+map <Leader>a :call RunAllSpecs()<CR>
 
 " vim:ft=vim
