@@ -1,24 +1,23 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/frank/.oh-my-zsh
+export ZSH=/home/frank/.oh-my-zsh
 
-ZSH_THEME="robby-modified"
+ZSH_THEME="robbyrussell"
 
-plugins=(gitfast brew gem)
+plugins=(gitfast gem)
 
 alias be='bundle exec'
 alias ls='ls -FG'
 alias l='ls -l'
 alias la='ls -la'
-alias vim='/Applications/MacVim.app/Contents/MacOS/vim'
-alias vi='/Applications/MacVim.app/Contents/MacOS/vim'
+alias c='clear'
+alias web='cd ~/code/fermentable-dev/fermentable'
+alias fe='cd ~/code/fermentable-dev/fermentable-fe'
 
 alias sz='source ~/.zshrc'
 
-export PATH="$HOME/.rbenv/bin:/Users/frank/.rbenv/shims:/Users/frank/.bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="$HOME/.bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 
 source $ZSH/oh-my-zsh.sh
-
-function trash() { mv $1 ~/.Trash }
 
 bindkey -e; bindkey '\e\e[C' forward-word; bindkey '\e\e[D' backward-word
 
@@ -31,5 +30,29 @@ if [ -d ~/.zsh ]; then
   unset i
 fi
 
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+source /usr/local/share/chruby/chruby.sh
+source /usr/local/share/chruby/auto.sh
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+autoload -U add-zsh-hook
+load-nvmrc() {
+  local node_version="$(nvm version)"
+  local nvmrc_path="$(nvm_find_nvmrc)"
+
+  if [ -n "$nvmrc_path" ]; then
+    local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
+
+    if [ "$nvmrc_node_version" = "N/A" ]; then
+      nvm install
+    elif [ "$nvmrc_node_version" != "$node_version" ]; then
+      nvm use
+    fi
+  elif [ "$node_version" != "$(nvm version default)" ]; then
+    echo "Reverting to nvm default version"
+    nvm use default
+  fi
+}
+add-zsh-hook chpwd load-nvmrc
+load-nvmrc
