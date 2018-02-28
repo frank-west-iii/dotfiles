@@ -11,12 +11,13 @@ alias ls='ls -FG'
 alias l='ls -l'
 alias la='ls -la'
 alias c='clear'
-alias web='cd ~/code/fermentable-dev/fermentable'
-alias fe='cd ~/code/fermentable-dev/fermentable-fe'
+alias web='cd ~/fermentable'
+alias fe='cd ~/fermentable-fe'
+alias pretty='git diff --name-only develop | grep ".*\.js*" | xargs yarn run -- prettier --write --single-quote && git add . && git commit -m "Prettier updates"'
 
 alias sz='source ~/.zshrc'
 
-export PATH="$HOME/.bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="$HOME/.bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/fermentable-dev/bin"
 
 source $ZSH/oh-my-zsh.sh
 
