@@ -4,3 +4,8 @@ tmp
 doc
 coverage
 /.git/
+node_modules
+vendor
+flow-typed
+yarn.lock
+*-bundle.js

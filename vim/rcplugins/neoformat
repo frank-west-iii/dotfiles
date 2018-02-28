@@ -1,0 +1,5 @@
+" Neoformat - A (Neo)vim plugin for formatting code
+
+Bundle "sbdchd/neoformat"
+
+" vim:ft=vim

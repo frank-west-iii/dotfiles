@@ -1,3 +1,5 @@
 .idea/
+.nvmrc
 .DS_Store
 .agignore
+.pryrc

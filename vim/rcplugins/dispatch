@@ -1,4 +1,4 @@
-" Dispatch
+" Dispatch - asynchronous build and test dispatcher
 
 Bundle "tpope/vim-dispatch"
 

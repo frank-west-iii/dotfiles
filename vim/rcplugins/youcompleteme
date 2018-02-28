@@ -1,4 +1,4 @@
-" Matchit - Extneded % open close pair matching
+" YouCompleteMe - AutoCompletion
 
 Bundle "Valloric/YouCompleteMe"
 

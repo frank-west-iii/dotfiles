@@ -1,5 +1,6 @@
 set nocompatible
 let mapleader = " "
+set shell=zsh\ -l
 
 function! s:SourceConfigFilesIn(directory)
   let directory_splat = '~/.vim/' . a:directory . '/*'

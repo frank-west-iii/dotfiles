@@ -1,8 +1,8 @@
 " Learn Vim the Hard Way
-noremap - ddp
-noremap _ dd2kp
+" noremap - ddp
+" noremap _ dd2kp
 
-inoremap <c-u> <esc><c-v>iwUea
-nnoremap <c-u> <c-v>iwU
+" inoremap <c-u> <esc><c-v>iwUea
+" nnoremap <c-u> <c-v>iwU
 
 " vim:ft=vim

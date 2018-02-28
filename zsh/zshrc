@@ -1,9 +1,10 @@
 # Path to your oh-my-zsh installation.
 export ZSH=/home/frank/.oh-my-zsh
+export EDITOR=vim
 
 ZSH_THEME="robbyrussell"
 
-plugins=(gitfast gem)
+plugins=(gitfast gem ssh-agent)
 
 alias be='bundle exec'
 alias ls='ls -FG'
@@ -19,7 +20,11 @@ export PATH="$HOME/.bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 
 source $ZSH/oh-my-zsh.sh
 
-bindkey -e; bindkey '\e\e[C' forward-word; bindkey '\e\e[D' backward-word
+zstyle :omz:plugins:ssh-agent agent-forwarding on
+
+# bindkey -e; bindkey '\e\e[C' forward-word; bindkey '\e\e[D' backward-word
+bindkey "5C" forward-word
+bindkey "5D" backward-word
 
 if [ -d ~/.zsh ]; then
   for i in ~/.zsh/*.sh; do

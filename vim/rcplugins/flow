@@ -1,0 +1,5 @@
+" Flow - A vim plugin for Flow
+
+Bundle "flowtype/vim-flow.git"
+
+" vim:ft=vim

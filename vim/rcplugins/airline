@@ -1,0 +1,5 @@
+" lean & mean status/tabline for vim that's light as air
+
+Bundle "vim-airline/vim-airline"
+
+" vim:ft=vim
