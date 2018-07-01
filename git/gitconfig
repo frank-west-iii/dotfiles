@@ -10,7 +10,8 @@
   step = !git aa && git commit -m 'Refactor step'
   dm = !git checkout master && git branch --merged | grep -v master | xargs git branch -d
   rho = !git fetch && git reset --hard origin/$(git rev-parse --abbrev-ref HEAD)
-  cm = !git fetch  && git branch --merged | grep -v master | grep -v staging | grep -v develop | xargs git branch -d && git remote prune origin
+  ; cm = !git fetch  && git branch --merged | grep -v master | grep -v staging | grep -v develop | xargs git branch -d && git remote prune origin
+  cm = !git fetch && git remote prune origin && git branch -vv | awk '/gone/ {print $1}' | xargs git branch -D
   pf = push --force-with-lease
   poh = push -u origin HEAD
   bd = !git for-each-ref --sort='-committerdate' --format='%(committerdate)%09%(refname)' refs/heads | sed -e 's-refs/heads/--'
