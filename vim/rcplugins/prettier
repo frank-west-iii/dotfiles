@@ -1,6 +1,0 @@
-"  Prettier - A vim plugin wrapper for prettier
-
-Bundle "prettier/vim-prettier"
-
-" vim:ft=vim
-
