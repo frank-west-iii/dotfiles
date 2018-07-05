@@ -1,4 +1,0 @@
-" Neoformat configuration
-"------------------------
-
-" autocmd BufWritePre *.js* Neoformat
