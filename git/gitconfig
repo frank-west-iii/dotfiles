@@ -14,6 +14,9 @@
   pf = push --force-with-lease
   poh = push -u origin HEAD
   bd = !git for-each-ref --sort='-committerdate' --format='%(committerdate)%09%(refname)' refs/heads | sed -e 's-refs/heads/--'
+  startfeature = flow feature start
+  finishfeature = flow feature finish
+  publishfeature = flow feature publish
 
 [color]
   diff = auto
@@ -21,7 +24,7 @@
   branch = auto
 
 [color "diff"]
-  meta = yellow 
+  meta = yellow
 
 [core]
   excludesfile = ~/.gitignore
@@ -37,3 +40,15 @@
   email = frank.west.iii@gmail.com
 [push]
 	default = simple
+[gitflow "feature.finish"]
+  push = true
+  keep = true
+[gitflow "bugfix.finish"]
+  push = true
+  keep = true
+[gitflow "hotfix.finish"]
+  push = true
+  keep = true
+[gitflow "release.finish"]
+  push = true
+  keep = true
