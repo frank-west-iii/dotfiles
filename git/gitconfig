@@ -13,6 +13,7 @@
   cm = !git fetch  && git branch --merged | grep -v master | grep -v staging | grep -v develop | xargs git branch -d && git remote prune origin
   pf = push --force-with-lease
   poh = push -u origin HEAD
+  bd = !git for-each-ref --sort='-committerdate' --format='%(committerdate)%09%(refname)' refs/heads | sed -e 's-refs/heads/--'
 
 [color]
   diff = auto
