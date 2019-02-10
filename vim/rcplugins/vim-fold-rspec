@@ -1,0 +1,5 @@
+" Rspec Folding
+
+Bundle "rlue/vim-fold-rspec"
+
+" vim:ft=vim
