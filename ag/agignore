@@ -9,3 +9,4 @@ vendor
 flow-typed
 yarn.lock
 *-bundle.js
+app/types/npm/

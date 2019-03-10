@@ -1,0 +1,5 @@
+" Tern - This is a Vim plugin that provides Tern-based JavaScript editing support.
+
+Bundle "ternjs/tern_for_vim"
+
+" vim:ft=vim
