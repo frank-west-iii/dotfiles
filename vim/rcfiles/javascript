@@ -1,0 +1,7 @@
+" Javascript
+"------------------------
+
+nmap <leader>log iconsole.log('****************************************')<esc>
+
+" vim:ft=vim
+

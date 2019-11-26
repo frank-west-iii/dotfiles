@@ -1,5 +1,6 @@
 [alias]
   aa = add --all
+  an = add -N .
   b = branch
   co = checkout
   cleanup = !git remote prune origin && git gc
@@ -17,6 +18,9 @@
   wip = "!f() { git add --all && git commit -m \"✏ $*\"; }; f"
   update = !git checkout develop && git fetch && git reset --hard origin/develop && git co - && git rebase develop
   squash = !git fetch && git reset --soft HEAD~$(git rev-list --count HEAD ^origin/develop) && git commit
+  g = guess
+  amino = !git add --all && git commit --amend --no-edit
+  tg = log master.. --pretty=format:"%s" --reverse --no-merges
 
 [color]
   diff = auto
