@@ -4,3 +4,5 @@
 .agignore
 .pryrc
 tags
+.yo-rc.json
+hello

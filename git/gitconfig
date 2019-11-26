@@ -1,5 +1,6 @@
 [alias]
   aa = add --all
+  an = add -N .
   b = branch
   co = checkout
   cleanup = !git remote prune origin && git gc
@@ -17,6 +18,15 @@
   startfeature = flow feature start
   finishfeature = flow feature finish
   publishfeature = flow feature publish
+  g = guess
+  wip = "!f() { git add --all && git commit -n -m \"✏ $*\"; }; f"
+  update = !git checkout develop && git fetch && git reset --hard origin/develop && git co - && git rebase develop
+  squash = !git fetch && git rebase origin/develop && git reset --soft origin/develop && git commit
+  amino = !git add --all && git commit --amend --no-edit
+  tg = log master.. --pretty=format:"%s" --reverse --no-merges
+  today = !git log --all --since=midnight --author=\"$(git config user.name)\" --oneline
+  yesterday = !git log --all --since="day.before.yesterday.midnight" --until=midnight --author=\"$(git config user.name)\" --oneline
+  week = !git log --all --since=\"1 friday ago\" --author=\"$(git config user.name)\" --oneline
 
 [color]
   diff = auto
@@ -37,7 +47,7 @@
 
 [user]
   name = Frank West
-  email = frank.west.iii@gmail.com
+  email = frank.west@waybetter.com
 [push]
 	default = simple
 [gitflow "feature.finish"]
@@ -49,6 +59,8 @@
 [gitflow "hotfix.finish"]
   push = true
   keep = true
+[gitflow "release.start"]
+  allowdirty = true
 [gitflow "release.finish"]
   push = true
   keep = true

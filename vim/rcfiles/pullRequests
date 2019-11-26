@@ -1,0 +1,6 @@
+" Pull Request configurations
+"------------------------
+
+nmap <leader>pr i[HUB-7] <esc>Go<esc>ohttps://waybetter.atlassian.net/browse/HUB-7<esc>
+
+" vim:ft=vim

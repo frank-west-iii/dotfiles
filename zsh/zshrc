@@ -35,11 +35,12 @@ if [ -d ~/.zsh ]; then
   unset i
 fi
 
-#source /usr/local/share/chruby/chruby.sh
-#source /usr/local/share/chruby/auto.sh
+source /usr/local/opt/chruby/share/chruby/chruby.sh
+source /usr/local/opt/chruby/share/chruby/auto.sh
 
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
 # autocompletion
 fpath=(~/.zsh/completion $fpath)
 autoload -Uz compinit && compinit -i
+export PATH="/usr/local/sbin:$PATH"
