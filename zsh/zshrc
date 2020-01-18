@@ -13,6 +13,8 @@ alias la='ls -la'
 alias c='clear'
 
 alias sz='source ~/.zshrc'
+alias vim="nvim"
+alias vi="nvim"
 
 export PATH="$HOME/.bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 
@@ -36,4 +38,6 @@ fi
 # autocompletion
 fpath=(~/.zsh/completion $fpath)
 autoload -Uz compinit && compinit -i
-export PATH="/usr/local/sbin:$PATH"
+export PATH="/usr/local/sbin:$HOME/.cargo/bin:$PATH"
+
+source /Users/waybetter/Library/Preferences/org.dystroy.broot/launcher/bash/br
