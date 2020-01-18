@@ -1,5 +1,0 @@
-" Vundle - Plugin Manager
-
-Bundle "VundleVim/Vundle.vim"
-
-" vim:ft=vim

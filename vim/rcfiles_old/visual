@@ -2,7 +2,7 @@
 "------------------------
 
 try
-    Bundle "christoomey/vim-colors-ctoomey"
+    Plug 'christoomey/vim-colors-ctoomey'
 catch
     " No colors for me
 endtry

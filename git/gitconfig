@@ -27,6 +27,7 @@
   today = !git log --all --since=midnight --author=\"$(git config user.name)\" --oneline
   yesterday = !git log --all --since="day.before.yesterday.midnight" --until=midnight --author=\"$(git config user.name)\" --oneline
   week = !git log --all --since=\"1 friday ago\" --author=\"$(git config user.name)\" --oneline
+  lastweek = !git log --all --since=\"2 friday ago\" --author=\"$(git config user.name)\" --oneline
 
 [color]
   diff = auto
@@ -38,7 +39,7 @@
 
 [core]
   excludesfile = ~/.gitignore
-  editor = vim --noplugin
+  editor = nvim
 [apply]
   whitespace = nowarn
 

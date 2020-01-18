@@ -1,5 +1,0 @@
-" YouCompleteMe - AutoCompletion
-
-Bundle "Valloric/YouCompleteMe"
-
-" vim:ft=vim

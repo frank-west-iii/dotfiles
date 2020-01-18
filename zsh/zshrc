@@ -19,6 +19,8 @@ alias webssh='kmd ko -- l ${PWD##*/} web'
 # alias in-notify-service-do='wbin-gen2 wb-notify-service bundle exec '
 
 alias sz='source ~/.zshrc'
+alias vim="nvim"
+alias vi="nvim"
 
 export PATH="$HOME/.bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:$HOME/code/waybetter/kraken/bin:$HOME/go/bin"
 
@@ -43,4 +45,6 @@ source /usr/local/opt/chruby/share/chruby/auto.sh
 # autocompletion
 fpath=(~/.zsh/completion $fpath)
 autoload -Uz compinit && compinit -i
-export PATH="/usr/local/sbin:$PATH"
+export PATH="/usr/local/sbin:$HOME/.cargo/bin:$PATH"
+
+source /Users/waybetter/Library/Preferences/org.dystroy.broot/launcher/bash/br
