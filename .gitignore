@@ -1,5 +1,6 @@
 *.swp
 .netrwhist
+neovim/plugged/**
 vim/bundle/**
 vim/bundles/**
 vim/Trashed-Bundles/**

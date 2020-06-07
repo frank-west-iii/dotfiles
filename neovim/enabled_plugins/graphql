@@ -1,0 +1,6 @@
+" vim-graphql - A Vim plugin that provides GraphQL file detection, syntax
+" highlighting, and indentation.
+
+Plug 'jparise/vim-graphql'
+
+" vim:ft=vim

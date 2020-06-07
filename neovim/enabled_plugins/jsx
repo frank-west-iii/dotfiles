@@ -1,0 +1,5 @@
+" JSX - jsx syntax highlighting and indenting
+
+Plug 'mxw/vim-jsx'
+
+" vim:ft=vim

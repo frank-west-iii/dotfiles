@@ -1,0 +1,5 @@
+" Ale - Asynchronous Lint Engine
+
+Plug 'w0rp/ale'
+
+" vim:ft=vim

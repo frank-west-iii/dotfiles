@@ -1,0 +1,5 @@
+" Abolish - Advanced substitutions
+
+Plug 'tpope/vim-abolish'
+
+" vim:ft=vim

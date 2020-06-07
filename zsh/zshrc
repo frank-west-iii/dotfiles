@@ -1,6 +1,6 @@
 # Path to your oh-my-zsh installation.
 export ZSH=/home/frank/.oh-my-zsh
-export EDITOR=vim
+export EDITOR=nvim
 
 ZSH_THEME="robbyrussell"
 
@@ -16,6 +16,8 @@ alias web='cd ~/fermentable'
 alias fe='cd ~/fermentable-fe'
 alias docs='cd ~/fermentable-docs'
 alias pretty='git diff --name-only develop | grep ".*\.js*" | xargs yarn run -- prettier --write --single-quote && git add . && git commit -m "Prettier updates"'
+alias vim='nvim'
+alias vi='nvim'
 
 alias sz='source ~/.zshrc'
 
