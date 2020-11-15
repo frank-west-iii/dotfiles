@@ -1,17 +1,15 @@
-# Path to your oh-my-zsh installation.
 export ZSH=/home/frank/.oh-my-zsh
 export EDITOR=vim
 
 ZSH_THEME="robbyrussell"
 
-plugins=(gitfast gem ssh-agent)
+plugins=(gitfast gem ssh-agent common-aliases gem git tmuxinator yarn)
 
 alias be='bundle exec'
 alias ls='ls -FG'
 alias l='ls -l'
 alias la='ls -la'
 alias c='clear'
-
 alias sz='source ~/.zshrc'
 alias vim="nvim"
 alias vi="nvim"
@@ -35,9 +33,11 @@ if [ -d ~/.zsh ]; then
   unset i
 fi
 
+[ -f /usr/share/autojump/autojump.sh ] && . /usr/share/autojump/autojump.sh
+
 # autocompletion
 fpath=(~/.zsh/completion $fpath)
 autoload -Uz compinit && compinit -i
 export PATH="/usr/local/sbin:$HOME/.cargo/bin:$PATH"
-
-source /Users/waybetter/Library/Preferences/org.dystroy.broot/launcher/bash/br
+. /home/frank/.asdf/asdf.sh
+. /home/frank/.asdf/completions/asdf.bash
