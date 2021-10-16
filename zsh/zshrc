@@ -1,30 +1,25 @@
-# Path to your oh-my-zsh installation.
-export ZSH=/home/frank/.oh-my-zsh
-export EDITOR=vim
+export ZSH=/root/.oh-my-zsh
+export EDITOR=nvim
 
 ZSH_THEME="robbyrussell"
 
-plugins=(gitfast gem ssh-agent)
+plugins=(asdf gitfast gem ssh-agent common-aliases gem git tmuxinator yarn)
 
 alias be='bundle exec'
 alias ls='ls -FG'
 alias l='ls -l'
 alias la='ls -la'
 alias c='clear'
-alias web='cd ~/code/fermentable-dev/fermentable'
-alias fe='cd ~/code/fermentable-dev/fermentable-fe'
 
 alias sz='source ~/.zshrc'
+alias vim="nvim"
+alias vi="nvim"
 
 export PATH="$HOME/.bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 
 source $ZSH/oh-my-zsh.sh
 
 zstyle :omz:plugins:ssh-agent agent-forwarding on
-
-# bindkey -e; bindkey '\e\e[C' forward-word; bindkey '\e\e[D' backward-word
-bindkey "5C" forward-word
-bindkey "5D" backward-word
 
 if [ -d ~/.zsh ]; then
   for i in ~/.zsh/*.sh; do
@@ -35,29 +30,8 @@ if [ -d ~/.zsh ]; then
   unset i
 fi
 
-source /usr/local/share/chruby/chruby.sh
-source /usr/local/share/chruby/auto.sh
+[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-autoload -U add-zsh-hook
-load-nvmrc() {
-  local node_version="$(nvm version)"
-  local nvmrc_path="$(nvm_find_nvmrc)"
-
-  if [ -n "$nvmrc_path" ]; then
-    local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
-
-    if [ "$nvmrc_node_version" = "N/A" ]; then
-      nvm install
-    elif [ "$nvmrc_node_version" != "$node_version" ]; then
-      nvm use
-    fi
-  elif [ "$node_version" != "$(nvm version default)" ]; then
-    echo "Reverting to nvm default version"
-    nvm use default
-  fi
-}
-add-zsh-hook chpwd load-nvmrc
-load-nvmrc
+# autocompletion
+fpath=(~/.zsh/completion $fpath)
+autoload -Uz compinit && compinit -i

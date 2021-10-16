@@ -1,6 +1,0 @@
-" Ruby configurations
-"------------------------
-
-autocmd BufNewFile,BufReadPost *.md set filetype=markdown
-
-" vim:ft=vim
