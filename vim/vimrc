@@ -1,6 +1,7 @@
 set nocompatible
 let mapleader = " "
 set shell=zsh\ -l
+set noswapfile
 
 function! s:SourceConfigFilesIn(directory)
   let directory_splat = '~/.vim/' . a:directory . '/*'
@@ -11,19 +12,9 @@ function! s:SourceConfigFilesIn(directory)
   endfor
 endfunction
 
-" Setup Vundle to manage my bundles
-"-----------------------------------
-filetype off " required!
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#rc("~/.vim/bundle/")
-
-
-" Plugins are each listed in their own file. Loop and source ftw
-"----------------------------------------------------------------
+call plug#begin('~/.vim/bundle')
 call s:SourceConfigFilesIn('rcplugins')
-
-filetype plugin indent on " required!
-syntax on
+call plug#end()
 
 " Vimrc is split accross multiple files, so loop over and source each
 "---------------------------------------------------------------------

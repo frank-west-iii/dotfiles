@@ -1,0 +1,15 @@
+" Visual configurations
+"------------------------
+
+try
+  Plug 'christoomey/vim-colors-ctoomey'
+catch
+    " No colors for me
+endtry
+
+colorscheme jellybeans
+
+set cursorline
+
+" vim:ft=vim
+

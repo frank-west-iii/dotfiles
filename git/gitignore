@@ -3,3 +3,10 @@
 .DS_Store
 .agignore
 .pryrc
+*[_-]NOTES.md
+routes.txt
+hello.*
+*.patch
+hello
+.env*.local
+.rgignore

@@ -1,5 +1,7 @@
 [alias]
   aa = add --all
+  amend = !git commit --amend
+  an = add -N .
   b = branch
   co = checkout
   cleanup = !git remote prune origin && git gc
@@ -15,8 +17,10 @@
   poh = push -u origin HEAD
   bd = !git for-each-ref --sort='-committerdate' --format='%(committerdate)%09%(refname)' refs/heads | sed -e 's-refs/heads/--'
   wip = "!f() { git add --all && git commit -m \"✏ $*\"; }; f"
-  update = !git checkout develop && git fetch && git reset --hard origin/develop && git co - && git rebase develop
+  update = !git checkout master && git fetch && git reset --hard origin/master && git co - && git rebase master
   squash = !git fetch && git reset --soft HEAD~$(git rev-list --count HEAD ^origin/develop) && git commit
+  g = guess
+  amino = !git add --all && git commit --amend --no-edit
 
 [color]
   diff = auto
@@ -28,7 +32,7 @@
 
 [core]
   excludesfile = ~/.gitignore
-  editor = vim --noplugin
+  editor = nvim
 [apply]
   whitespace = nowarn
 

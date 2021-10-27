@@ -1,5 +1,0 @@
-" tslime - Send command from vim to a running tmux session
-
-Bundle "jgdavey/tslime.vim"
-
-" vim:ft=vim

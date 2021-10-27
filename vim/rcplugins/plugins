@@ -1,0 +1,22 @@
+Plug 'elixir-editors/vim-elixir'                " Elixir
+Plug 'tpope/vim-sensible'                       " Defaults everyone can agree on
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-abolish'                        " Abolish - Advanced substitutions
+Plug 'junegunn/vim-easy-align'                  " 🌻 A Vim alignment plugin
+Plug 'neoclide/coc.nvim', {'branch': 'release'} " Coc - Make your Vim/Neovim as smart as VSCode.
+Plug 'ctrlpvim/ctrlp.vim'                       " ctrlp.vim - Full path fuzzy file, buffer, mru, tag, ... finder for Vim.
+Plug 'nanotech/jellybeans.vim'                  " Jellybeans - Colorscheme definition. Dark and contrasty
+Plug 'scrooloose/nerdtree'                      " NERD Tree - A tree explorer plugin for vim.
+Plug 'Xuyuanp/nerdtree-git-plugin'              " NERD Tree git plugin - A plugin of NERDTree showing git status
+Plug 'jremmen/vim-ripgrep'                      " Rg - ripgrep
+Plug 'tpope/vim-surround'                       " Surround - Surround selection with entry
+Plug 'tpope/vim-endwise'
+Plug 'vim-ruby/vim-ruby'
+Plug 'AndrewRadev/diffurcate.vim'
+
+" Javascript
+Plug 'neoclide/vim-jsx-improve', { 'for': [ 'javascript', 'js', 'jsx' ]}
+Plug 'sourcegraph/javascript-typescript-langserver' " JavaScript/TypeScript Language Server
+"Plug 'mxw/vim-jsx'                                  " JSX - jsx syntax highlighting and indenting
+
+" vim:ft=vim
