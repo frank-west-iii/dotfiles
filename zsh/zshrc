@@ -4,7 +4,7 @@ export EDITOR=nvim
 
 ZSH_THEME="robbyrussell"
 
-plugins=(gitfast gem ssh-agent)
+plugins=(gitfast gem ssh-agent asdf)
 
 alias be='bundle exec'
 alias ls='ls -FG'
@@ -40,8 +40,8 @@ if [ -d ~/.zsh ]; then
   unset i
 fi
 
-source /usr/local/share/chruby/chruby.sh
-source /usr/local/share/chruby/auto.sh
+# source /usr/local/share/chruby/chruby.sh
+# source /usr/local/share/chruby/auto.sh
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -66,3 +66,9 @@ load-nvmrc() {
 }
 add-zsh-hook chpwd load-nvmrc
 load-nvmrc
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+. $HOME/.asdf/asdf.sh
+
+. $HOME/.asdf/completions/asdf.bash

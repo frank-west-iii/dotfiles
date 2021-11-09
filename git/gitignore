@@ -4,3 +4,6 @@
 .agignore
 .pryrc
 .ignore
+.solargraph.yml
+.tool-versions
+

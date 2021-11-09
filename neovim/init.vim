@@ -18,3 +18,5 @@ call plug#begin('~/.config/nvim/plugged')
 call s:SourceConfigFilesIn('enabled_plugins')
 
 call plug#end()
+
+call s:SourceConfigFilesIn('enabled_scripts')

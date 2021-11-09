@@ -1,0 +1,57 @@
+" Search configurations
+"------------------------
+
+" Searching stuff
+set hlsearch                    " hilight searches, map below to clear
+nohlsearch                      " kill highliting on vimrc reload
+set incsearch                   " do incremental searching
+set ignorecase                  " Case insensitive...
+set smartcase                   " ...except if you use UCase
+nnoremap <LEADER>rh :silent noh<CR>
+
+" Mappings for quick search & replace. Global set to default
+" Do a / search first, then leave pattern empty in :s// to use previous
+nnoremap <Leader>sub :%s///g<left><left>
+vnoremap <Leader>sub :s///g<left><left>
+nnoremap <leader>wub :windo %s///g<left><left>
+map <Leader>cs :call SearchForCallSitesCursor()<CR>
+
+function! SearchForCallSitesCursor()
+  let searchTerm = expand("<cword>")
+  call SearchForCallSites(searchTerm)
+endfunction
+
+
+" Search for call sites for term (excluding its definition) and
+" " load into the quickfix list.
+function! SearchForCallSites(term)
+  cexpr system('rg ' . shellescape(a:term) . '\| grep -v def')
+endfunction
+
+" Search for call sites for term (excluding its definition) and
+" " load into the quickfix list.
+function! SearchForCallSites(term)
+  cexpr system('ag ' . shellescape(a:term) . '\| grep -v def')
+endfunction
+
+" The Silver Searcher
+if executable('ag')
+  " Use ag over grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+  " ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching = 0
+endif
+
+if executable('rg')
+  set grepprg=rg\ --color=never
+  let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
+  let g:ctrlp_use_caching = 0
+endif
+
+nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+
+" vim:ft=vim

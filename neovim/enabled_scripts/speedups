@@ -1,0 +1,62 @@
+" Speedup configurations
+"------------------------
+
+" Quick toggle between two files
+nnoremap <leader><leader> <C-^>
+
+" " Use j/k to start, then scroll through autocomplete options
+" inoremap <expr> <C-j> ((pumvisible())?("\<C-n>"):("\<C-x><c-n>"))
+" inoremap <expr> <C-k> ((pumvisible())?("\<C-p>"):("\<C-x><c-k>"))
+
+" For reformatting files.
+nmap <leader>i magg=G`a
+
+" " Do not use <Ctrl-c> to break out to normal mode
+" " Use C-Space to Esc out of any mode
+" nnoremap <C-Space> <Esc>:noh<CR>
+" vnoremap <C-Space> <Esc>gV
+" onoremap <C-Space> <Esc>
+" cnoremap <C-Space> <C-c>
+" inoremap <C-Space> <Esc>`^
+" " Terminal sees <C-@> as <C-space> WTF, but ok
+" nnoremap <C-@> <Esc>:noh<CR>
+" vnoremap <C-@> <Esc>gV
+" onoremap <C-@> <Esc>
+" cnoremap <C-@> <C-c>
+" inoremap <C-@> <Esc>`^
+
+" " Setup nice command tab completion
+" set wildmenu
+" set wildmode=list:longest,full
+" set wildignore+=*.pyc
+
+" Easy re-sourcing of vimrc
+map <leader>sop :source %<cr>
+
+" " Doesn't seem I'm going to win on this one
+" command! W write
+
+" " Easy navigation for editing and cding
+" nmap <Leader>ec :e ~/code/
+" nmap <Leader>eh :e ~/
+" nmap <Leader>cd :cd ~/code/
+" nnoremap <leader>er :e <C-r>=escape(expand("%:p:h"), ' ')<cr>/
+" nnoremap <leader>sav :sav <C-r>=escape(expand("%:p:h"), ' ')<cr>/
+
+" "Make Y yank to end of line (like D, or C)
+" nmap Y y$
+
+" Quickly open a second window to view files side by side
+nmap <LEADER>vn :vnew<CR>
+nmap <LEADER>vs :vsplit<CR>
+
+" " Reselect pasted text. Mnem: 'Get pasted'
+" nnoremap gp `[v`]
+
+" " Go to position of last edit. Mnem: 'Go to Edit'
+" nnoremap ge `.
+
+" map - ddp
+" map _ dd2kp
+
+" " vim:ft=vim

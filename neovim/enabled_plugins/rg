@@ -1,0 +1,5 @@
+" Rg - Ripgrep
+
+Plug 'jremmen/vim-ripgrep'
+
+" vim:ft=vim
