@@ -6,21 +6,25 @@
   co = checkout
   cleanup = !git remote prune origin && git gc
   cleanup-all = !git remote prune origin && git gc && git clean -df && git stash clear
+  cp = cherry-pick
   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
   rhm = !git checkout master && git fetch && git reset --hard origin/master
   st = status
   step = !git aa && git commit -m 'Refactor step'
   dm = !git checkout master && git branch --merged | grep -v master | xargs git branch -d
   rho = !git fetch && git reset --hard origin/$(git rev-parse --abbrev-ref HEAD)
-  cm = !git fetch  && git branch --merged | grep -v master | grep -v staging | grep -v develop | xargs git branch -d && git remote prune origin
+  cm = !git fetch  && git branch --merged | grep -v master | grep -v main | grep -v staging | grep -v develop | xargs git branch -d && git remote prune origin
   pf = push --force-with-lease
   poh = push -u origin HEAD
-  bd = !git for-each-ref --sort='-committerdate' --format='%(committerdate)%09%(refname)' refs/heads | sed -e 's-refs/heads/--'
+  #bd = !git for-each-ref --sort='-committerdate' --format='%(committerdate)%09%(refname)' refs/heads | sed -e 's-refs/heads/--'
+  bd = branches
   wip = "!f() { git add --all && git commit -m \"✏ $*\"; }; f"
   update = !git checkout master && git fetch && git reset --hard origin/master && git co - && git rebase master
   squash = !git fetch && git reset --soft HEAD~$(git rev-list --count HEAD ^origin/develop) && git commit
   g = guess
   amino = !git add --all && git commit --amend --no-edit
+  churn = !git log --all -M -C --name-only --format='format:' "$@" | sort | grep -v '^$' | uniq -c | sort -n | awk 'BEGIN {print "count\tfile"} {print $1 "  " $2}'
+
 
 [color]
   diff = auto
@@ -44,3 +48,5 @@
   email = frank.west.iii@gmail.com
 [push]
 	default = simple
+[init]
+	defaultBranch = main

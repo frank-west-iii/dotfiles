@@ -10,3 +10,11 @@ hello.*
 hello
 .env*.local
 .rgignore
+.pry_history
+.zsh_source
+.pryrc.local
+TODO.md
+
+# Credentials
+/config/master.key
+/config/credentials/production.key

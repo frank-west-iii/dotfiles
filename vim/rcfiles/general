@@ -13,4 +13,13 @@ set softtabstop=2 " specific settings via autocmd
 " For reformatting files
 nmap <leader>i magg=G`a
 
+function PivotalUrl()
+  let gitBranch=system("git rev-parse --abbrev-ref HEAD")
+  let strippedBranch=substitute(l:gitBranch, "\n", "", "")
+  let ticketNumber=substitute(l:strippedBranch, "\\D", "", "g")
+  let l:foundline = search("Is there a card") " Can return 0 on no match
+  let url="https://www.pivotaltracker.com/story/show/" . ticketNumber
+  call setline(l:foundline, url)
+endfunction
+
 " vim:ft=vim
