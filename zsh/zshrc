@@ -22,12 +22,13 @@ alias vim='nvim'
 
 export PATH="$HOME/.bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin"
 export PATH="$PATH:$HOME/code/fermentable/bin"
+export PATH="/opt/homebrew/bin:$PATH"
 
 source $ZSH/oh-my-zsh.sh
 
 zstyle :omz:plugins:ssh-agent agent-forwarding on
 
-# bindkey -e; bindkey '\e\e[C' forward-word; bindkey '\e\e[D' backward-word
+#bindkey -e; bindkey '\e\e[C' forward-word; bindkey '\e\e[D' backward-word
 bindkey "5C" forward-word
 bindkey "5D" backward-word
 
@@ -40,7 +41,7 @@ if [ -d ~/.zsh ]; then
   unset i
 fi
 
-[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+[ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
 
 . $(brew --prefix asdf)/asdf.sh
 
@@ -51,3 +52,4 @@ load-local-conf() {
    fi
 }
 add-zsh-hook chpwd load-local-conf
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"

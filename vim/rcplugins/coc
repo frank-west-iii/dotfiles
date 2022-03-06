@@ -1,3 +1,7 @@
+" coc
+
+Plug 'neoclide/coc.nvim', {'branch': 'release'} " Coc - Make your Vim/Neovim as smart as VSCode.
+
 " if hidden is not set, TextEdit might fail.
 set hidden
 
@@ -127,5 +131,16 @@ nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
-" vim:ft=vim
+" Global extensions
+let g:coc_global_extensions = [
+      \'coc-eslint',
+      \'coc-solargraph',
+      \'coc-go',
+      \'coc-json',
+      \'coc-git',
+      \'coc-html',
+      \'coc-css',
+      \'coc-tsserver'
+      \]
 
+" vim:ft=vim

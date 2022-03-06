@@ -1,24 +1,22 @@
-Plug 'christoomey/vim-conflicted'
-Plug 'elixir-editors/vim-elixir'                " Elixir
-Plug 'tpope/vim-sensible'                       " Defaults everyone can agree on
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-abolish'                        " Abolish - Advanced substitutions
-Plug 'junegunn/vim-easy-align'                  " 🌻 A Vim alignment plugin
-Plug 'neoclide/coc.nvim', {'branch': 'release'} " Coc - Make your Vim/Neovim as smart as VSCode.
-Plug 'ctrlpvim/ctrlp.vim'                       " ctrlp.vim - Full path fuzzy file, buffer, mru, tag, ... finder for Vim.
-Plug 'nanotech/jellybeans.vim'                  " Jellybeans - Colorscheme definition. Dark and contrasty
-Plug 'scrooloose/nerdtree'                      " NERD Tree - A tree explorer plugin for vim.
-Plug 'Xuyuanp/nerdtree-git-plugin'              " NERD Tree git plugin - A plugin of NERDTree showing git status
-Plug 'tpope/vim-surround'                       " Surround - Surround selection with entry
-Plug 'dphaener/vim-ripgrep'
-Plug 'tpope/vim-endwise'
-Plug 'vim-ruby/vim-ruby'
 Plug 'AndrewRadev/diffurcate.vim'
-Plug 'tpope/vim-dispatch'
-Plug 'thoughtbot/vim-rspec'
-Plug 'jgdavey/tslime.vim'
+Plug 'Xuyuanp/nerdtree-git-plugin'              " NERD Tree git plugin - A plugin of NERDTree showing git status
+Plug 'christoomey/vim-conflicted'
+Plug 'dphaener/vim-ripgrep'
+Plug 'elixir-editors/vim-elixir'                " Elixir
 Plug 'github/copilot.vim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+Plug 'jgdavey/tslime.vim'
+Plug 'junegunn/vim-easy-align'                  " 🌻 A Vim alignment plugin
+Plug 'nanotech/jellybeans.vim'                  " Jellybeans - Colorscheme definition. Dark and contrasty
+Plug 'thoughtbot/vim-rspec'
+Plug 'tpope/vim-abolish'                        " Abolish - Advanced substitutions
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-sensible'                       " Defaults everyone can agree on
+Plug 'tpope/vim-surround'                       " Surround - Surround selection with entry
+Plug 'vim-ruby/vim-ruby'
 
 " Javascript
 Plug 'neoclide/vim-jsx-improve', { 'for': [ 'javascript', 'js', 'jsx' ]}
