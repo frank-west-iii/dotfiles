@@ -5,7 +5,6 @@ Plug 'dphaener/vim-ripgrep'
 Plug 'elixir-editors/vim-elixir'                " Elixir
 Plug 'github/copilot.vim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
-Plug 'jgdavey/tslime.vim'
 Plug 'junegunn/vim-easy-align'                  " 🌻 A Vim alignment plugin
 Plug 'nanotech/jellybeans.vim'                  " Jellybeans - Colorscheme definition. Dark and contrasty
 Plug 'thoughtbot/vim-rspec'
@@ -22,5 +21,6 @@ Plug 'vim-ruby/vim-ruby'
 Plug 'neoclide/vim-jsx-improve', { 'for': [ 'javascript', 'js', 'jsx' ]}
 Plug 'sourcegraph/javascript-typescript-langserver' " JavaScript/TypeScript Language Server
 Plug 'MaxMEllon/vim-jsx-pretty'
+Plug 'vim-airline/vim-airline'
 
 " vim:ft=vim

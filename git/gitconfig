@@ -1,29 +1,33 @@
 [alias]
   aa = add --all
   amend = !git commit --amend
+  amino = !git add --all && git commit --amend --no-edit
   an = add -N .
   b = branch
-  co = checkout
+  bd = branches
+  checkpoint = !git aa && git commit -m 'Checkpoint'
+  churn = !git log --all -M -C --name-only --format='format:' "$@" | sort | grep -v '^$' | uniq -c | sort -n
   cleanup = !git remote prune origin && git gc
   cleanup-all = !git remote prune origin && git gc && git clean -df && git stash clear
+  cm = !git fetch -p && git for-each-ref --format '%(refname:short) %(upstream:track)' | awk '$2 == \"[gone]\" {print $1}' | xargs -r git branch -D
+  co = checkout
   cp = cherry-pick
-  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
-  rhm = !git checkout master && git fetch && git reset --hard origin/master
-  st = status
-  step = !git aa && git commit -m 'Refactor step'
   dm = !git checkout master && git branch --merged | grep -v master | xargs git branch -d
-  rho = !git fetch && git reset --hard origin/$(git rev-parse --abbrev-ref HEAD)
-  cm = !git fetch  && git branch --merged | grep -v master | grep -v main | grep -v staging | grep -v develop | xargs git branch -d && git remote prune origin
+  g = guess
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+  message = show -s --format=%B
   pf = push --force-with-lease
   poh = push -u origin HEAD
-  #bd = !git for-each-ref --sort='-committerdate' --format='%(committerdate)%09%(refname)' refs/heads | sed -e 's-refs/heads/--'
-  bd = branches
-  wip = "!f() { git add --all && git commit -m \"✏ $*\"; }; f"
-  update = !git checkout master && git fetch && git reset --hard origin/master && git co - && git rebase master
+  rhm = !git checkout master && git fetch && git reset --hard origin/master
+  rho = !git fetch && git reset --hard origin/$(git rev-parse --abbrev-ref HEAD)
   squash = !git fetch && git reset --soft HEAD~$(git rev-list --count HEAD ^origin/develop) && git commit
-  g = guess
-  amino = !git add --all && git commit --amend --no-edit
-  churn = !git log --all -M -C --name-only --format='format:' "$@" | sort | grep -v '^$' | uniq -c | sort -n | awk 'BEGIN {print "count\tfile"} {print $1 "  " $2}'
+  st = status
+  step = !git aa && git commit -m 'Refactor step'
+  update = !git checkout master && git fetch && git reset --hard origin/master && git co - && git rebase master
+  yesterday = log --reverse --since=1.day --pretty=format:'%s' --author=frank
+  friday = log --reverse --since=3.days --pretty=format:'%s' --author=frank
+  wip = "!f() { git add --all && git commit -m \"✏ $*\"; }; f"
+  week = log --reverse --since=1.week --pretty=format:'%s'
 
 
 [color]
@@ -45,7 +49,7 @@
 
 [user]
   name = Frank West
-  email = frank.west.iii@gmail.com
+  email = frank@getfermentable.com
 [push]
 	default = simple
 [init]

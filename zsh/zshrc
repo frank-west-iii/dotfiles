@@ -4,7 +4,7 @@ export EDITOR=nvim
 
 ZSH_THEME="robbyrussell"
 
-plugins=(gitfast gem git ssh-agent asdf)
+plugins=(gitfast gem git ssh-agent asdf fzf)
 
 alias be='bundle exec'
 alias c='clear'
@@ -19,6 +19,7 @@ alias sz='source ~/.zshrc'
 alias tx=tmuxinator
 alias vi='nvim'
 alias vim='nvim'
+alias generate_demo_data='bin/rails generate_demo_data'
 
 export PATH="$HOME/.bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin"
 export PATH="$PATH:$HOME/code/fermentable/bin"
@@ -43,8 +44,6 @@ fi
 
 [ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
 
-. $(brew --prefix asdf)/asdf.sh
-
 autoload -U add-zsh-hook
 load-local-conf() {
    if [[ -f .zsh_source && -r .zsh_source ]]; then
@@ -53,3 +52,4 @@ load-local-conf() {
 }
 add-zsh-hook chpwd load-local-conf
 export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+export PATH="/opt/homebrew/sbin:$PATH"

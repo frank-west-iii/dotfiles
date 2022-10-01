@@ -13,7 +13,7 @@ hello
 .pry_history
 .zsh_source
 .pryrc.local
-TODO.md
+TODO*.md
 
 # Credentials
 /config/master.key

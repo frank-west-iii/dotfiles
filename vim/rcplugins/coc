@@ -140,7 +140,8 @@ let g:coc_global_extensions = [
       \'coc-git',
       \'coc-html',
       \'coc-css',
-      \'coc-tsserver'
+      \'coc-tsserver',
+      \'coc-tailwindcss'
       \]
 
 " vim:ft=vim

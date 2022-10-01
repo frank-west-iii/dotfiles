@@ -15,10 +15,10 @@ au FileType ruby setl sw=2 sts=2 ts=2 tw=100 " Two spaces per tab
 au FileType ebury setl setl sw=2 sts=2 ts=2 " Two spaces per tab
 
 "Quick enter a pry
-nmap <leader>bp orequire 'pry'; binding.pry<esc>^
+nmap <leader>bp obinding.pry<esc>^
 
-" let g:rspec_command = "Dispatch bundle exec rspec {spec}"
-let g:rspec_command = 'call Send_to_Tmux("bundle exec rspec {spec}\n")'
+" let g:rspec_command = "Dispatch bin/rspec {spec}"
+let g:rspec_command = 'call Send_to_Tmux("bin/rspec {spec}\n")'
 let g:ruby_indent_assignment_style = 'variable'
 
 " RSpec.vim mappings

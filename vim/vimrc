@@ -1,6 +1,12 @@
 set nocompatible
 let mapleader = " "
-set shell=zsh\ -l
+set shell=zsh
+
+" This is breaking tslime
+"set shellcmdflag=-l
+
+" This is breaking vim-airline
+"set shell=zsh\ -l
 set noswapfile
 
 function! s:SourceConfigFilesIn(directory)
